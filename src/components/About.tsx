@@ -51,7 +51,7 @@ const About = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 z-10" />
               <Image
-                src="/developer.jpg" // Replace with your image
+                src="/upload.jpg" // Replace with your image
                 alt="Developer"
                 width={400}
                 height={500}
@@ -65,7 +65,7 @@ const About = () => {
                   transition={{ delay: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  John Doe
+                  Mahesh Kumar Jena
                 </motion.h3>
                 <motion.p
                   className="text-cyan-400"

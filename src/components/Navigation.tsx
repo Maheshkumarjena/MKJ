@@ -1,13 +1,13 @@
-"use client"
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+"use client";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Tech Stack', href: '#tech-stack' },
-  { name: 'Contact', href: '#contact' },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skills" },
+  { name: "Tech Stack", href: "#tech-stack" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navigation() {
@@ -19,36 +19,36 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
   };
 
   return (
     <nav
-      className={`absolute w-full z-50 transition-all duration-300 ${
-        isScrolled ? ' bg-blur-md shadow-md' : 'bg-transparent'
+      className={`w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Name */}
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className="text-xl font-bold text-white"
           >
-            Your Name
+            Mahesh Kumar Jena
           </a>
 
           {/* Desktop Navigation */}
@@ -66,23 +66,23 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden z-40 fixed right-3 p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
               <span
                 className={`w-full h-0.5 bg-[#9F7AEA] transform transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+                  isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               />
               <span
                 className={`w-full h-0.5 bg-[#9F7AEA] transition-all duration-300 ${
-                  isMobileMenuOpen ? 'opacity-0' : ''
+                  isMobileMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
                 className={`w-full h-0.5 bg-[#9F7AEA] transform transition-all duration-300 ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                  isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
               />
             </div>
@@ -94,21 +94,34 @@ export default function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#121212]"
+            className="fixed top-0 right-0 w-full h-full z-30 backdrop-filter backdrop-blur-lg flex flex-col items-center justify-center"
           >
-            <div className="px-4 py-4 space-y-4">
+            {/* Toggle Button Inside Mobile Menu */}
+            {/* <button
+              className="absolute top-4 right-4 p-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <div className="w-6 h-5 relative flex flex-col justify-between">
+                <span className="w-full h-0.5 bg-white transform rotate-45 translate-y-2" />
+                <span className="w-full h-0.5 bg-white opacity-0" />
+                <span className="w-full h-0.5 bg-white transform -rotate-45 -translate-y-2" />
+              </div>
+            </button> */}
+
+            <div className="flex flex-col items-center space-y-4">
               {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left text-sm text-[#9F7AEA] hover:text-[#6B46C1] transition-colors duration-300"
-                >
-                  {item.name}
-                </button>
+               <button
+               key={item.name}
+               onClick={() => scrollToSection(item.href)}
+               className="text-2xl font-semibold text-[#9F7AEA] hover:text-[#6B46C1] transition-colors duration-300 border border-[#9F7AEA] hover:border-[#6B46C1] rounded-full px-6 py-2 bg-transparent"
+               style={{ fontFamily: 'Montserrat, sans-serif' }}
+             >
+               {item.name}
+             </button>
               ))}
             </div>
           </motion.div>

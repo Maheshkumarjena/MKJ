@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { FiArrowDown, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const HeroSection = () => {
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLElement | null>(null);
 
   const scrollToNextSection = () => {
     window.scrollTo({
@@ -40,10 +40,10 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className="relative flex items-center justify-center min-h-screen w-full overflow-hidden px-4 sm:px-6 lg:px-8"
+      className="flex items-center mt-2 lg:mt-0 justify-center  lg:min-h-screen w-full overflow-hidden px-4 sm:px-6 lg:px-8"
     >
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
+      <div className=" z-10 max-w-7xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Content */}
           <motion.div

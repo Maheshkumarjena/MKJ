@@ -1,82 +1,208 @@
-"use client"
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
+'use client';
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  technologies: string[];
-}
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const projects: Project[] = [
+const projects = [
   {
-    id: '1',
-    title: 'Project One',
-    description: 'A full-stack application built with Next.js and Node.js',
-    image: '/project1.jpg',
-    link: '/projects/project-one',
-    technologies: ['Next.js', 'Node.js', 'MongoDB'],
+    id: 1,
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce solution with payment integration and inventory management.",
+    tags: ["React", "Node.js", "MongoDB"],
+    image: "/project1.jpg"
   },
-  // Add more projects here
+  {
+    id: 2,
+    title: "Health Tracking App",
+    description: "Mobile application for tracking fitness metrics and nutrition with data visualization.",
+    tags: ["React Native", "Firebase", "D3.js"],
+    image: "/project2.jpg"
+  },
+  {
+    id: 3,
+    title: "AI Content Generator",
+    description: "Web application that generates marketing content using GPT-3.5 API.",
+    tags: ["Next.js", "Tailwind", "OpenAI"],
+    image: "/project3.jpg"
+  },
+  {
+    id: 4,
+    title: "Task Management System",
+    description: "Collaborative task management tool with real-time updates and team features.",
+    tags: ["TypeScript", "Supabase", "WebSockets"],
+    image: "/project4.jpg"
+  },
+  {
+    id: 7,
+    title: "Task Management System",
+    description: "Collaborative task management tool with real-time updates and team features.",
+    tags: ["TypeScript", "Supabase", "WebSockets"],
+    image: "/project4.jpg"
+  },
+  {
+    id: 8,
+    title: "Task Management System",
+    description: "Collaborative task management tool with real-time updates and team features.",
+    tags: ["TypeScript", "Supabase", "WebSockets"],
+    image: "/project4.jpg"
+  },
+  {
+    id: 9,
+    title: "Task Management System",
+    description: "Collaborative task management tool with real-time updates and team features.",
+    tags: ["TypeScript", "Supabase", "WebSockets"],
+    image: "/project4.jpg"
+  },
+  {
+    id: 5,
+    title: "Task ent System",
+    description: "rative task management tool with real-time updates and team features.",
+    tags: ["TypeScript", "Supabase", "WebSockets"],
+    image: "/project4.jpg"
+  }
 ];
 
-export default function Projects() {
+const ProjectCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextProject = () => {
+    setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevProject = () => {
+    setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+  };
+
+  const goToProject = (index: number) => {
+    setCurrentIndex(index);
+  };
+
   return (
-    <section id="projects" className="py-20 px-4 md:px-8 ">
-    <div className="max-w-6xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl font-bold mb-12 text-center text-white"
-      >
-        Projects
-      </motion.h2>
-      
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Numbered Navigation */}
+      <div className="flex justify-center gap-4 mb-8">
         {projects.map((project, index) => (
-          <motion.div
+          <button
             key={project.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative bg-[#1A1A1A] overflow-hidden"
+            onClick={() => goToProject(index)}
+            className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+              currentIndex === index
+                ? 'bg-indigo-600 text-white'
+                : 'bg-gray-200 hover:bg-indigo-100 text-gray-700 hover:text-indigo-700'
+            }`}
+            onMouseEnter={() => {}}
           >
-            <div className="relative aspect-video">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-[#121212] bg-opacity-0 group-hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center p-4">
-                  <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-                  <p className="text-sm mb-4 text-[#9F7AEA]">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 justify-center mb-4">
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className="text-xs bg-[#6B46C1] bg-opacity-20 px-2 py-1 rounded text-[#9F7AEA]">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <Link
-                    href={project.link}
-                    className="inline-block px-4 py-2 border border-[#6B46C1] text-[#6B46C1] hover:bg-[#6B46C1] hover:text-white transition-colors duration-300"
-                  >
-                    View Project
-                  </Link>
-                </div>
-              </div>
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-sm font-medium"
+            >
+              {index + 1}
+            </motion.span>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: currentIndex === index ? 1 : 0, scale: 1 }}
+              className="absolute -bottom-8 text-sm font-medium text-indigo-600"
+            >
+              {currentIndex === index ? project.title : ''}
             </motion.div>
-          ))}
-        </div>
+          </button>
+        ))}
       </div>
-    </section>
+
+      {/* Project Carousel */}
+      <div className="relative overflow-hidden rounded-xl shadow-xl bg-white">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={projects[currentIndex].id}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5 }}
+            className="p-6 md:p-8"
+          >
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-1/2">
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="rounded-lg overflow-hidden shadow-md"
+                >
+                  {/* Replace with your actual image component */}
+                  <div className="bg-gradient-to-r from-indigo-500 to-purple-600 h-64 md:h-80 w-full flex items-center justify-center text-white text-lg">
+                    Project Image: {projects[currentIndex].title}
+                  </div>
+                </motion.div>
+              </div>
+              <div className="md:w-1/2 flex flex-col justify-center">
+                <motion.h3 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-2xl md:text-3xl font-bold text-gray-900 mb-4"
+                >
+                  {projects[currentIndex].title}
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-gray-600 mb-6"
+                >
+                  {projects[currentIndex].description}
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="flex flex-wrap gap-2 mb-8"
+                >
+                  {projects[currentIndex].tags.map((tag) => (
+                    <span 
+                      key={tag}
+                      className="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="flex gap-4"
+                >
+                  <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                    View Project
+                  </button>
+                  <button className="px-6 py-2 border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+                    Source Code
+                  </button>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevProject}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md z-10"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          onClick={nextProject}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md z-10"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
   );
-} 
+};
+
+export default ProjectCarousel;
