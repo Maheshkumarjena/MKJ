@@ -14,7 +14,7 @@ export default function Home() {
       <About />
       <Projects />
       <Skills />
-      <TechStack />
+      {/* <TechStack /> */}
       <Contact />
     </main>
   );
