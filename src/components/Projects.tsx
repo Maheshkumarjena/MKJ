@@ -4,13 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
-  {
-    id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with payment integration and inventory management.",
-    tags: ["React", "Node.js", "MongoDB"],
-    image: "/project1.jpg"
-  },
+  
   {
     id: 2,
     title: "Health Tracking App",
@@ -78,7 +72,7 @@ const ProjectCarousel = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full max-w-7xl  mx-auto  px-4 sm:px-6 lg:px-8 py-12">
       {/* Numbered Navigation */}
       <div className="flex justify-center gap-4 mb-8">
         {projects.map((project, index) => (
@@ -99,19 +93,19 @@ const ProjectCarousel = () => {
             >
               {index + 1}
             </motion.span>
-            <motion.div 
+            {/* <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: currentIndex === index ? 1 : 0, scale: 1 }}
               className="absolute -bottom-8 text-sm font-medium text-indigo-600"
             >
               {currentIndex === index ? project.title : ''}
-            </motion.div>
+            </motion.div> */}
           </button>
         ))}
       </div>
 
       {/* Project Carousel */}
-      <div className="relative overflow-hidden rounded-xl shadow-xl bg-white">
+      <div className="relative overflow-hidden rounded-4xl border border-blue-500  backdrop-blur-[1px]  shadow-2xl shadow-blue-500/50 ">
         <AnimatePresence mode="wait">
           <motion.div
             key={projects[currentIndex].id}
@@ -138,7 +132,7 @@ const ProjectCarousel = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="text-2xl md:text-3xl font-bold text-gray-900 mb-4"
+                  className="text-2xl md:text-3xl font-bold text-gray-200 mb-4"
                 >
                   {projects[currentIndex].title}
                 </motion.h3>
@@ -146,7 +140,7 @@ const ProjectCarousel = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="text-gray-600 mb-6"
+                  className="text-gray-200 mb-6"
                 >
                   {projects[currentIndex].description}
                 </motion.p>

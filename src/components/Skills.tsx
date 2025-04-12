@@ -60,8 +60,8 @@ const SkillsSection = () => {
   const [activeTab, setActiveTab] = useState<keyof typeof skillsData>('frontend');
   
   return (
-    <section className="py-12 px-4 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">My Skills</h2>
+    <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <h2 className="text-3xl font-bold text-center mb-12 text-gray-200">My Skills</h2>
       
       {/* Navigation Tabs */}
       <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -81,7 +81,7 @@ const SkillsSection = () => {
       </div>
       
       {/* Skills Content */}
-      <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+      <div className="backdrop-blur-[1px] border border-blue-500  rounded-4xl shadow-2xl shadow-blue-500/70 p-6 md:p-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -90,7 +90,7 @@ const SkillsSection = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800">
+            <h3 className="text-2xl font-semibold mb-6 text-gray-200">
               {skillsData[activeTab].title}
             </h3>
             
@@ -98,8 +98,8 @@ const SkillsSection = () => {
               {skillsData[activeTab].skills.map((skill) => (
                 <div key={skill.name} className="mb-4">
                   <div className="flex justify-between mb-1">
-                    <span className="text-gray-700 font-medium">{skill.name}</span>
-                    <span className="text-gray-500 text-sm">{skill.level}%</span>
+                    <span className="text-gray-300 font-medium">{skill.name}</span>
+                    <span className="text-gray-300 text-sm">{skill.level}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2.5">
                     <motion.div

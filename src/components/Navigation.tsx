@@ -33,8 +33,8 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-blur-md shadow-md" : "bg-transparent"
+      className={`w-full fixed top-0 z-100 transition-all duration-300 ${
+        isScrolled ? " backdrop-blur  shadow-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

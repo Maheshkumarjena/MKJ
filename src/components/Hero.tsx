@@ -40,7 +40,7 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className="flex items-center mt-2 lg:mt-0 justify-center  lg:min-h-screen w-full overflow-hidden px-4 sm:px-6 lg:px-8"
+      className="flex items-center mt-14 lg:mt-0 justify-center  lg:min-h-screen w-full overflow-hidden px-4 sm:px-6 lg:px-8"
     >
       {/* Content */}
       <div className=" z-10 max-w-7xl mx-auto w-full">
@@ -157,7 +157,7 @@ const HeroSection = () => {
 
         {/* Scroll Down Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
+          className="relative bottom-2 left-6 -translate-x-1/2 cursor-pointer"
           onClick={scrollToNextSection}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -169,9 +169,9 @@ const HeroSection = () => {
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <FiArrowDown className="text-2xl text-cyan-400" />
+              <FiArrowDown className="text-2xl text-cyan-400 border border-blue-500 h-[40px] rounded-full " />
             </motion.div>
-            <p className="text-sm text-cyan-400 mt-2">Scroll Down</p>
+            {/* <p className="text-sm text-cyan-400 mt-2">Scroll Down</p> */}
           </div>
         </motion.div>
       </div>
