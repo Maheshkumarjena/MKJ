@@ -1,10 +1,10 @@
 'use client';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
-import { useMediaQuery } from 'react-responsive';
+// import { useMediaQuery } from 'react-responsive';
 
 const BackgroundCanvas = () => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  // const isMobile = useMediaQuery({ maxWidth: 768 });
 
   // if (isMobile) return null; // Don't render on mobile
 

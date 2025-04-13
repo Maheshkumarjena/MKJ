@@ -65,16 +65,6 @@ const services: Service[] = [
         timeframe: "3-4 weeks",
         shadowColor: "shadow-red-500/30"
     },
-    // {
-    //     title: "App Dev",
-    //     description: "Reach your audience on the go with a seamless mobile app!",
-    //     icon: "📱",
-    //     color: "from-indigo-500 to-blue-500",
-    //     price: "From ₹25000",
-    //     features: ["Cross-platform development", "UI/UX design", "Backend integration"],
-    //     timeframe: "6-8 weeks",
-    //     shadowColor: "shadow-indigo-500/30"
-    // },
     {
         title: "Maintenance",
         description: "Keep your digital assets running smoothly!",
@@ -85,16 +75,6 @@ const services: Service[] = [
         timeframe: "Ongoing",
         shadowColor: "shadow-gray-500/30"
     },
-    // {
-    //     title: "UI/UX Design",
-    //     description: "Craft intuitive and beautiful interfaces!",
-    //     icon: "✨",
-    //     color: "from-violet-500 to-purple-500",
-    //     price: "From ₹5000",
-    //     features: ["Wireframing", "Prototyping", "User testing", "Visual design"],
-    //     timeframe: "2-3 weeks",
-    //     shadowColor: "shadow-violet-500/30"
-    // }
 ];
 
 const ServicesSection: React.FC = () => {
@@ -138,19 +118,18 @@ const ServicesSection: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {services.map((service, index) => (
                     <div key={index} className="relative">
-                        {/* Desktop Hover Card */}
                         {!isMobile && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20, scale: 0.9 }}
                                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                transition={{ 
-                                    duration: 0.5, 
+                                transition={{
+                                    duration: 0.5,
                                     delay: index * 0.1,
                                     type: "spring",
                                     stiffness: 100,
                                     damping: 10
                                 }}
-                                whileHover={{ 
+                                whileHover={{
                                     scale: 1.05,
                                     boxShadow: `0 10px 25px -5px ${service.shadowColor.replace('/30', '/50')}`
                                 }}
@@ -160,21 +139,20 @@ const ServicesSection: React.FC = () => {
                                     expandedCard === index ? 'absolute z-50 w-full h-auto min-h-[160px]' : 'h-40'
                                 } ${service.shadowColor} hover:${service.shadowColor.replace('/30', '/50')}`}
                             >
-                                <ServiceCardContent 
-                                    service={service} 
+                                <ServiceCardContent
+                                    service={service}
                                     isExpanded={expandedCard === index}
                                     isMobile={isMobile}
                                 />
                             </motion.div>
                         )}
 
-                        {/* Mobile Click Card */}
                         {isMobile && (
                             <motion.div
                                 initial={{ opacity: 0, y: 20, scale: 0.9 }}
                                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                transition={{ 
-                                    duration: 0.5, 
+                                transition={{
+                                    duration: 0.5,
                                     delay: index * 0.1,
                                     type: "spring",
                                     stiffness: 100,
@@ -186,8 +164,8 @@ const ServicesSection: React.FC = () => {
                                 } ${service.shadowColor}`}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <ServiceCardContent 
-                                    service={service} 
+                                <ServiceCardContent
+                                    service={service}
                                     isExpanded={expandedCard === index}
                                     isMobile={isMobile}
                                 />
@@ -209,15 +187,23 @@ const ServicesSection: React.FC = () => {
     );
 };
 
-const ServiceCardContent: React.FC<{ 
-    service: Service; 
-    isExpanded: boolean; 
-    isMobile: boolean 
+const ServiceCardContent: React.FC<{
+    service: Service;
+    isExpanded: boolean;
+    isMobile: boolean
 }> = ({ service, isExpanded, isMobile }) => {
+
+    const handleGetStarted = () => {
+        const message = `I am interested in your ${service.title} service. Let's start the development.`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/916372552376?text=${encodedMessage}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
     return (
         <div className={`h-full p-4 flex flex-col ${isExpanded ? 'justify-start' : 'justify-between'}`}>
             <div className="flex items-start justify-between">
-                <motion.span 
+                <motion.span
                     whileHover={{ rotate: 10, scale: 1.1 }}
                     className="text-3xl"
                 >
@@ -229,7 +215,7 @@ const ServiceCardContent: React.FC<{
             </div>
 
             <div>
-                <motion.h3 
+                <motion.h3
                     whileHover={{ x: 5 }}
                     className="font-bold text-gray-100 mt-2"
                 >
@@ -252,7 +238,7 @@ const ServiceCardContent: React.FC<{
                         <div className="mt-4 text-sm">
                             <ul className="space-y-1 mb-2">
                                 {service.features.map((feature, featureIndex) => (
-                                    <motion.li 
+                                    <motion.li
                                         key={featureIndex}
                                         initial={{ x: -20, opacity: 0 }}
                                         animate={{ x: 0, opacity: 1 }}
@@ -267,7 +253,7 @@ const ServiceCardContent: React.FC<{
                                 ))}
                             </ul>
                             {service.timeframe && (
-                                <motion.p 
+                                <motion.p
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.2 }}
@@ -280,10 +266,11 @@ const ServiceCardContent: React.FC<{
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="w-full py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-md text-sm font-medium mb-2"
+                                onClick={handleGetStarted}
                             >
-                                Get Quote
+                                Get Started
                             </motion.button>
-                            
+
                             <motion.p
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}

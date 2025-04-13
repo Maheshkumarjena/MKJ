@@ -15,7 +15,7 @@ const HeroSection = () => {
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
+    visible: (i: number) => ({ // Changed any to number
       opacity: 1,
       y: 0,
       transition: {
@@ -57,7 +57,7 @@ const HeroSection = () => {
               variants={textVariants}
               custom={0}
             >
-              Hi, I'm
+              Hi, I&#39;m {/* Corrected single quote */}
             </motion.p>
 
             <motion.h1
@@ -107,7 +107,7 @@ const HeroSection = () => {
               custom={4}
             >
               <motion.a
-                href="https://github.com"
+                href="https://github.com/Maheshkumarjena"
                 target="_blank"
                 className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white transition-colors"
                 whileHover={{ y: -5 }}
@@ -116,7 +116,7 @@ const HeroSection = () => {
               </motion.a>
 
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/mahesh15/"
                 target="_blank"
                 className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white transition-colors"
                 whileHover={{ y: -5 }}
@@ -125,7 +125,7 @@ const HeroSection = () => {
               </motion.a>
 
               <motion.a
-                href="mailto:example@example.com"
+                href="mailto:maheshkumarjena46@gmail.com"
                 className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white transition-colors"
                 whileHover={{ y: -5 }}
               >

@@ -1,11 +1,11 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 
-const About = () => {
-  const variants = {
+const About: React.FC = () => {
+  const variants: Variants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -16,7 +16,7 @@ const About = () => {
     }),
   };
 
-  const skills = [
+  const skills: string[] = [
     'JavaScript',
     'TypeScript',
     'React',
@@ -94,7 +94,7 @@ const About = () => {
               custom={2}
               variants={variants}
             >
-              I'm a passionate Full Stack Developer with 5+ years of experience building modern web applications.
+              I&#39;m a passionate Full Stack Developer with 1+ year of experience building modern web applications.
               I specialize in JavaScript technologies across the whole stack (React.js, Next.js, Node.js, Express, MongoDB).
             </motion.p>
 
@@ -104,7 +104,7 @@ const About = () => {
               variants={variants}
             >
               My approach combines technical expertise with creative problem-solving to deliver high-quality,
-              scalable solutions. I'm committed to writing clean, maintainable code and staying updated with
+              scalable solutions. I&#39;m committed to writing clean, maintainable code and staying updated with
               the latest industry trends.
             </motion.p>
 
@@ -145,13 +145,13 @@ const About = () => {
                 Contact Me
               </motion.a>
               <motion.a
-                href="/resume.pdf"
+                href="/MaheshKumarJena-Resume.pdf"
                 download
                 className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 rounded-full font-medium hover:bg-cyan-400/10 transition-all duration-300"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Download CV
+                Download Resume
               </motion.a>
             </motion.div>
           </div>

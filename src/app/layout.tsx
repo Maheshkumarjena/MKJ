@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
+// import Navigation from "@/components/Navigation";
 import BackgroundCanvas from "@/components/Background";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Mahesh Kumar Jena | Full-Stack Developer",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth ">
-      <body className={`${inter.className} bg-white text-black antialiased`}>
+      <body className={`$ bg-white text-black antialiased`}>
         <div className="sticky ">
       <BackgroundCanvas />
 

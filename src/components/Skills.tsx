@@ -3,7 +3,17 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const skillsData = {
+interface Skill {
+  name: string;
+  level: number;
+}
+
+interface SkillsCategory {
+  title: string;
+  skills: Skill[];
+}
+
+const skillsData: { [key: string]: SkillsCategory } = {
   frontend: {
     title: "Frontend Development",
     skills: [
@@ -12,7 +22,7 @@ const skillsData = {
       { name: "TypeScript", level: 80 },
       { name: "Tailwind CSS", level: 95 },
       { name: "JavaScript", level: 90 },
-    ]
+    ],
   },
   backend: {
     title: "Backend Development",
@@ -22,7 +32,7 @@ const skillsData = {
       { name: "Python", level: 75 },
       { name: "Django", level: 70 },
       { name: "REST APIs", level: 85 },
-    ]
+    ],
   },
   database: {
     title: "Database",
@@ -32,7 +42,7 @@ const skillsData = {
       { name: "MySQL", level: 70 },
       { name: "Firebase", level: 65 },
       { name: "Prisma", level: 75 },
-    ]
+    ],
   },
   devops: {
     title: "DevOps & Cloud",
@@ -42,7 +52,7 @@ const skillsData = {
       { name: "CI/CD", level: 75 },
       { name: "Git", level: 90 },
       { name: "Linux", level: 80 },
-    ]
+    ],
   },
   soft: {
     title: "Soft Skills",
@@ -52,19 +62,17 @@ const skillsData = {
       { name: "Problem Solving", level: 85 },
       { name: "Time Management", level: 80 },
       { name: "Adaptability", level: 90 },
-    ]
-  }
+    ],
+  },
 };
 
-const SkillsSection = () => {
+const SkillsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<keyof typeof skillsData>('frontend');
   const [isOpen, setIsOpen] = useState(false);
-
 
   return (
     <section id='skills' className="pt-20 mt-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold text-center my-4 text-gray-200">My Skills</h2>
-
 
       {/* Navigation Tabs */}
 
@@ -113,8 +121,8 @@ const SkillsSection = () => {
                   whileHover={{ backgroundColor: "#3b82f6" }} // Indigo-500 on hover
                   transition={{ duration: 0.1 }}
                   className={`px-4 py-3 cursor-pointer rounded-[30px] ${activeTab === tab
-                      ? "bg-indigo-600 text-white"
-                      : " text-gray-200 hover:bg-gray-700"
+                    ? "bg-indigo-600 text-white"
+                    : " text-gray-200 hover:bg-gray-700"
                     }`}
                   onClick={() => {
                     setActiveTab(tab as keyof typeof skillsData);
