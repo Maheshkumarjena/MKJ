@@ -72,7 +72,9 @@ const ProjectCarousel = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl  mx-auto  px-4 sm:px-6 lg:px-8 py-12">
+    <div id='projects' className="w-full max-w-7xl   mx-auto  px-4 sm:px-6 lg:px-8 pt-15 mt-10">
+            <h2 className="text-3xl font-bold text-center my-4 text-gray-200">My Projects</h2>
+
       {/* Numbered Navigation */}
       <div className="flex justify-center gap-4 mb-8">
         {projects.map((project, index) => (
@@ -122,17 +124,17 @@ const ProjectCarousel = () => {
                   className="rounded-lg overflow-hidden shadow-md"
                 >
                   {/* Replace with your actual image component */}
-                  <div className="bg-gradient-to-r from-indigo-500 to-purple-600 h-64 md:h-80 w-full flex items-center justify-center text-white text-lg">
+                  <div className="bg-gradient-to-r from-indigo-500 to-purple-600 h-64 md:h-80 w-full flex items-center justify-center text-white  text-sm md:text-lg">
                     Project Image: {projects[currentIndex].title}
                   </div>
                 </motion.div>
               </div>
-              <div className="md:w-1/2 flex flex-col justify-center">
+              <div className="md:w-1/2 flex flex-col  justify-center">
                 <motion.h3 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="text-2xl md:text-3xl font-bold text-gray-200 mb-4"
+                  className="text-md sm:text-xl md:text-3xl font-bold text-gray-200 mb-2 md:mb-4"
                 >
                   {projects[currentIndex].title}
                 </motion.h3>
@@ -140,7 +142,7 @@ const ProjectCarousel = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="text-gray-200 mb-6"
+                  className="text-gray-200 text-sm sm:text-md md:text-xl mb-3 md:mb-6"
                 >
                   {projects[currentIndex].description}
                 </motion.p>
@@ -148,12 +150,12 @@ const ProjectCarousel = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="flex flex-wrap gap-2 mb-8"
+                  className="flex flex-wrap gap-2 mb-4 md:mb-8"
                 >
                   {projects[currentIndex].tags.map((tag) => (
                     <span 
                       key={tag}
-                      className="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
+                      className="px-2 md:px-3 py-[2px] bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
                     >
                       {tag}
                     </span>
@@ -165,10 +167,10 @@ const ProjectCarousel = () => {
                   transition={{ delay: 0.5 }}
                   className="flex gap-4"
                 >
-                  <button className="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                  <button className=" px-2 md:px-6 py-[4px] md:py-2 bg-indigo-600 text-[12px] sm:text-md text-white rounded-lg hover:bg-indigo-700 transition-colors">
                     View Project
                   </button>
-                  <button className="px-6 py-2 border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+                  <button className="px-2 md:px-6 py-[4px]  md:py-2 border border-indigo-600 text-indigo-600 text-[12px] sm:text-md rounded-lg hover:bg-indigo-50 transition-colors">
                     Source Code
                   </button>
                 </motion.div>

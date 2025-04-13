@@ -6,7 +6,7 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
-  { name: "Tech Stack", href: "#tech-stack" },
+  { name: "Services", href: "#services" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -98,7 +98,7 @@ export default function Navigation() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 right-0 w-full h-full z-30 backdrop-filter backdrop-blur-lg flex flex-col items-center justify-center"
+            className="sticky top-0 right-0 w-full h-screen z-30 backdrop-filter backdrop-blur-lg flex flex-col items-center justify-center"
           >
             {/* Toggle Button Inside Mobile Menu */}
             {/* <button

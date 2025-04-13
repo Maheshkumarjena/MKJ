@@ -16,7 +16,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 md:px-8">
+    <section id="contact" className="py-10 mt-12  px-4 md:px-8">
       <div className="max-w-3xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -76,12 +76,13 @@ export default function Contact() {
             />
           </div>
 
-          <button
+          <motion.button
+                  whileTap={{ scale: 0.95 }}
             type="submit"
-            className="w-full px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-300"
+            className="w-full px-6 py-3 shadow-2xl shadow-blue-500/50 bg-black text-white rounded-lg hover:bg-transparent transition-colors duration-300"
           >
             Send Message
-          </button>
+          </motion.button>
         </motion.form>
 
         <motion.div
@@ -92,10 +93,10 @@ export default function Contact() {
         >
           <p className="mb-4">Or reach out directly:</p>
           <a
-            href="mailto:your.email@example.com"
-            className="text-black hover:underline"
+            href="mailto:maheshkumarjena46@gmail.com"
+            className="text-blue-200 hover:underline"
           >
-            your.email@example.com
+            maheshkumarjena46@gmail.com
           </a>
         </motion.div>
       </div>

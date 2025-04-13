@@ -34,7 +34,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative py-20">
+    <section id="about" className="relative pt-20">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <motion.div

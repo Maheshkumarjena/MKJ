@@ -7,6 +7,7 @@ import Contact from '@/components/Contact';
 import Navigation from '@/components/Navigation';
 import ServicesSection from '@/components/Services';
 import WhyChooseMe from '@/components/WhyMe';
+import InfiniteTestimonials from '@/components/Testimonial';
 
 export default function Home() {
   return (
@@ -16,9 +17,9 @@ export default function Home() {
       <About />
       <Projects />
       <Skills />
+      {/* <InfiniteTestimonials/> */}
       <ServicesSection/>
-      <WhyChooseMe/>
-      {/* <TechStack /> */}
+      {/* <WhyChooseMe/> */}
       <Contact />
     </main>
   );
