@@ -83,12 +83,12 @@ const HeroSection = () => {
               custom={3}
             >
               <motion.a
-                href="#contact"
+                href="#projects"
                 className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:-translate-y-1"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Contact Me
+                View Projects
               </motion.a>
 
               <motion.a
