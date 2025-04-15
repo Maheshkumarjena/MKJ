@@ -92,12 +92,12 @@ const HeroSection = () => {
               </motion.a>
 
               <motion.a
-                href="#projects"
+                href="#services"
                 className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 rounded-full font-medium hover:bg-cyan-400/10 transition-all duration-300 hover:-translate-y-1"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View Projects
+                View Services
               </motion.a>
             </motion.div>
 

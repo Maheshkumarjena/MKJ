@@ -40,7 +40,7 @@ const skillsData: { [key: string]: SkillsCategory } = {
       { name: "MongoDB", level: 80 },
       { name: "PostgreSQL", level: 75 },
       { name: "MySQL", level: 70 },
-      { name: "Firebase", level: 65 },
+      { name: "Redis", level: 65 },
       { name: "Prisma", level: 75 },
     ],
   },
@@ -57,10 +57,10 @@ const skillsData: { [key: string]: SkillsCategory } = {
   soft: {
     title: "Soft Skills",
     skills: [
-      { name: "Communication", level: 95 },
-      { name: "Teamwork", level: 90 },
+      { name: "Cooperative", level: 95 },
+      { name: "Fast Learner", level: 90 },
       { name: "Problem Solving", level: 85 },
-      { name: "Time Management", level: 80 },
+      { name: "Curious", level: 80 },
       { name: "Adaptability", level: 90 },
     ],
   },

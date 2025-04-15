@@ -2,58 +2,55 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const projects = [
-  
+
+  {
+    id: 1,
+    title: "Ride Sharing App",
+    description: "A web application (EcoRide) for sharing rides to increase carpooling, where travelers can post their ride and other travelers can book the ride.",
+    tags: ["Next.js", "MongoDB", "GraphHopper API"],
+    image: "/Ecoride.png",
+    live: "https://eco-ride-virid.vercel.app/",
+    sourceCode: "https://github.com/Maheshkumarjena/EcoRide"
+  },
   {
     id: 2,
-    title: "Health Tracking App",
-    description: "Mobile application for tracking fitness metrics and nutrition with data visualization.",
-    tags: ["React Native", "Firebase", "D3.js"],
-    image: "/project2.jpg"
+    title: "AI Image Detector",
+    description: "Web application detects if an image is original or tampered using AI and Photoshop.",
+    tags: ["Next.js", "Tailwind", "RestAPI"],
+    image: "/ImageDetection.png",
+    live: "https://image-detection-model.vercel.app/",
+    sourceCode: "https://github.com/Maheshkumarjena/ImageDetectionModel"
   },
   {
     id: 3,
-    title: "AI Content Generator",
-    description: "Web application that generates marketing content using GPT-3.5 API.",
-    tags: ["Next.js", "Tailwind", "OpenAI"],
-    image: "/project3.jpg"
+    title: "Inventory Management System",
+    description: "Collaborative inventory management tool with complex features.",
+    tags: ["JavaScript", "Next.js", "Prisma"],
+    image: "/Jm.png",
+    live: "https://jm.partswala.in/",
+    sourceCode: "https://github.com/Maheshkumarjena/JM"
   },
   {
     id: 4,
-    title: "Task Management System",
-    description: "Collaborative task management tool with real-time updates and team features.",
+    title: "Student Alumni Interaction Platform",
+    description: "A platform for students and alumni to connect and interact.",
     tags: ["TypeScript", "Supabase", "WebSockets"],
-    image: "/project4.jpg"
-  },
-  {
-    id: 7,
-    title: "Task Management System",
-    description: "Collaborative task management tool with real-time updates and team features.",
-    tags: ["TypeScript", "Supabase", "WebSockets"],
-    image: "/project4.jpg"
-  },
-  {
-    id: 8,
-    title: "Task Management System",
-    description: "Collaborative task management tool with real-time updates and team features.",
-    tags: ["TypeScript", "Supabase", "WebSockets"],
-    image: "/project4.jpg"
-  },
-  {
-    id: 9,
-    title: "Task Management System",
-    description: "Collaborative task management tool with real-time updates and team features.",
-    tags: ["TypeScript", "Supabase", "WebSockets"],
-    image: "/project4.jpg"
+    image: "/AlumnNex.png",
+    live: "https://alumn-nex.vercel.app/",
+    sourceCode: "https://github.com/Maheshkumarjena/AlumnNex"
   },
   {
     id: 5,
-    title: "Task ent System",
-    description: "rative task management tool with real-time updates and team features.",
-    tags: ["TypeScript", "Supabase", "WebSockets"],
-    image: "/project4.jpg"
-  }
+    title: "E-commerce Platform UI Design",
+    description: "A minimalist e-commerce platform UI design with a focus on user experience and aesthetics.",
+    tags: ["UI/UX", "JavaScript", "Raw Html & Css"],
+    image: "/EcommerceStore.png",
+    live: "https://github.com/Maheshkumarjena/majorProject/deployments",
+    sourceCode: "https://github.com/Maheshkumarjena/majorProject"
+  },
 ];
 
 const ProjectCarousel = () => {
@@ -72,12 +69,13 @@ const ProjectCarousel = () => {
   };
 
   return (
-    <div id='projects' className="w-full max-w-7xl   mx-auto  px-4 sm:px-6 lg:px-8 pt-15 mt-10">
-            <h2 className="text-3xl font-bold text-center my-4 text-gray-200">My Projects</h2>
+    <div id='projects' className="w-full max-w-7xl  mx-auto  px-4 sm:px-6 lg:px-8 pt-15 mt-10">
+      <h2 className="text-3xl font-bold text-center my-4 text-gray-200">My Projects</h2>
 
       {/* Numbered Navigation */}
       <div className="flex justify-center gap-4 mb-8">
         {projects.map((project, index) => (
+
           <button
             key={project.id}
             onClick={() => goToProject(index)}
@@ -88,14 +86,14 @@ const ProjectCarousel = () => {
             }`}
             onMouseEnter={() => {}}
           >
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-sm font-medium"
             >
               {index + 1}
             </motion.span>
-            {/* <motion.div 
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: currentIndex === index ? 1 : 0, scale: 1 }}
               className="absolute -bottom-8 text-sm font-medium text-indigo-600"
@@ -119,18 +117,22 @@ const ProjectCarousel = () => {
           >
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.02 }}
                   className="rounded-lg overflow-hidden shadow-md"
                 >
                   {/* Replace with your actual image component */}
-                  <div className="bg-gradient-to-r from-indigo-500 to-purple-600 h-64 md:h-80 w-full flex items-center justify-center text-white  text-sm md:text-lg">
-                    Project Image: {projects[currentIndex].title}
-                  </div>
+                  <Image
+                    width={500}
+                    height={500}
+                    src={projects[currentIndex].image}
+                    alt={projects[currentIndex].title}
+                    className="w-full h-64 md:h-80 object-cover"
+                  />
                 </motion.div>
               </div>
               <div className="md:w-1/2 flex flex-col  justify-center">
-                <motion.h3 
+                <motion.h3
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -153,7 +155,7 @@ const ProjectCarousel = () => {
                   className="flex flex-wrap gap-2 mb-4 md:mb-8"
                 >
                   {projects[currentIndex].tags.map((tag) => (
-                    <span 
+                    <span
                       key={tag}
                       className="px-2 md:px-3 py-[2px] bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full"
                     >
@@ -167,12 +169,16 @@ const ProjectCarousel = () => {
                   transition={{ delay: 0.5 }}
                   className="flex gap-4"
                 >
-                  <button className=" px-2 md:px-6 py-[4px] md:py-2 bg-indigo-600 text-[12px] sm:text-md text-white rounded-lg hover:bg-indigo-700 transition-colors">
-                    View Project
-                  </button>
-                  <button className="px-2 md:px-6 py-[4px]  md:py-2 border border-indigo-600 text-indigo-600 text-[12px] sm:text-md rounded-lg hover:bg-indigo-50 transition-colors">
-                    Source Code
-                  </button>
+                  <a href={projects[currentIndex].live} target="_blank" rel="noopener noreferrer">
+                    <button className=" px-2 md:px-6 py-[4px] md:py-2 bg-indigo-600 text-[12px] sm:text-md text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                      View Project
+                    </button>
+                  </a>
+                  <a href={projects[currentIndex].sourceCode} target="_blank" rel="noopener noreferrer">
+                    <button className="px-2 md:px-6 py-[4px]  md:py-2 border border-indigo-600 text-indigo-600 text-[12px] sm:text-md rounded-lg hover:bg-indigo-50 transition-colors">
+                      Source Code
+                    </button>
+                  </a>
                 </motion.div>
               </div>
             </div>

@@ -40,7 +40,7 @@ const services: Service[] = [
         description: "Turn clicks into customers with a powerful online store!",
         icon: "🛒",
         color: "from-green-500 to-teal-400",
-        price: "From ₹15000",
+        price: "From ₹8000",
         features: ["Product catalog", "Shopping cart", "Payment gateway", "Order management"],
         timeframe: "4-6 weeks",
         shadowColor: "shadow-green-500/30"
@@ -50,7 +50,7 @@ const services: Service[] = [
         description: "Establish your brand's digital presence!",
         icon: "🏢",
         color: "from-amber-500 to-orange-500",
-        price: "From ₹8000",
+        price: "From ₹5000",
         features: ["Custom design", "Company info", "Services pages", "Contact form"],
         timeframe: "2-3 weeks",
         shadowColor: "shadow-amber-500/30"
@@ -60,7 +60,7 @@ const services: Service[] = [
         description: "Automate and innovate with cutting-edge AI solutions!",
         icon: "🤖",
         color: "from-red-500 to-pink-500",
-        price: "From ₹12000",
+        price: "From ₹6000",
         features: ["Chatbot development", "Automation workflows", "Data analysis"],
         timeframe: "3-4 weeks",
         shadowColor: "shadow-red-500/30"
