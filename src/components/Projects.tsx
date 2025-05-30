@@ -6,17 +6,9 @@ import Image from 'next/image';
 
 const projects = [
 
+  
   {
     id: 1,
-    title: "Ride Sharing App",
-    description: "A web application (EcoRide) for sharing rides to increase carpooling, where travelers can post their ride and other travelers can book the ride.",
-    tags: ["Next.js", "MongoDB", "GraphHopper API"],
-    image: "/Ecoride.png",
-    live: "https://eco-ride-virid.vercel.app/",
-    sourceCode: "https://github.com/Maheshkumarjena/EcoRide"
-  },
-  {
-    id: 2,
     title: "AI Image Detector",
     description: "Web application detects if an image is original or tampered using AI and Photoshop.",
     tags: ["Next.js", "Tailwind", "RestAPI"],
@@ -25,16 +17,35 @@ const projects = [
     sourceCode: "https://github.com/Maheshkumarjena/ImageDetectionModel"
   },
   {
-    id: 3,
+    id: 2,
     title: "Inventory Management System",
     description: "Collaborative inventory management tool with complex features.",
     tags: ["JavaScript", "Next.js", "Prisma"],
     image: "/Jm.png",
     live: "https://jm.partswala.in/",
     sourceCode: "https://github.com/Maheshkumarjena/JM"
+  }
+  ,{
+    id: 3,
+    title: "Dot and Box multiplayer game",
+    description: "A multiplayer game where players take turns drawing lines to complete boxes.",
+    tags: ["Next js", "socket.io", "PostgreSQL"],
+    image: "/dotbox.png",
+    live: "https://dot-box-ui.vercel.app/",
+    sourceCode: "https://github.com/Maheshkumarjena/dot-box-ui"
   },
+  
   {
     id: 4,
+    title: "Ride Sharing App",
+    description: "A web application (EcoRide) for sharing rides to increase carpooling, where travelers can post their ride and other travelers can book the ride.",
+    tags: ["Next.js", "MongoDB", "GraphHopper API"],
+    image: "/Ecoride.png",
+    live: "https://eco-ride-virid.vercel.app/",
+    sourceCode: "https://github.com/Maheshkumarjena/EcoRide"
+  },
+  {
+    id: 5,
     title: "Student Alumni Interaction Platform",
     description: "A platform for students and alumni to connect and interact.",
     tags: ["TypeScript", "Supabase", "WebSockets"],
@@ -42,15 +53,16 @@ const projects = [
     live: "https://alumn-nex.vercel.app/",
     sourceCode: "https://github.com/Maheshkumarjena/AlumnNex"
   },
-  {
-    id: 5,
-    title: "E-commerce Platform UI Design",
-    description: "A minimalist e-commerce platform UI design with a focus on user experience and aesthetics.",
-    tags: ["UI/UX", "JavaScript", "Raw Html & Css"],
-    image: "/EcommerceStore.png",
-    live: "https://github.com/Maheshkumarjena/majorProject/deployments",
-    sourceCode: "https://github.com/Maheshkumarjena/majorProject"
-  },
+  
+  // {
+  //   id: 7,
+  //   title: "E-commerce Platform ",
+  //   description: "A minimalist e-commerce platform UI design with a focus on user experience and aesthetics.",
+  //   tags: ["UI/UX", "JavaScript", "Raw Html & Css"],
+  //   image: "/EcommerceStore.png",
+  //   live: "https://github.com/Maheshkumarjena/majorProject/deployments",
+  //   sourceCode: "https://github.com/Maheshkumarjena/majorProject"
+  // }
 ];
 
 const ProjectCarousel = () => {
