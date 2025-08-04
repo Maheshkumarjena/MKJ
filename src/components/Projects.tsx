@@ -6,9 +6,21 @@ import Image from 'next/image';
 
 const projects = [
 
-  
+
+
   {
     id: 1,
+    title: "E-commerce Platform ",
+    description: "A minimalist e-commerce platform  focus on user experience , smooth functionality and aesthetics.",
+    tags: ["email.js", "JavaScript", "Next.js", "Tailwind CSS ", "redux"],
+    image: "/fc-shop.png",
+    live: "https://flame-n-crumble.vercel.app/",
+    sourceCode: "https://github.com/Maheshkumarjena/FlameCrumble"
+  },
+
+  
+  {
+    id: 2,
     title: "AI Image Detector",
     description: "Web application detects if an image is original or tampered using AI and Photoshop.",
     tags: ["Next.js", "Tailwind", "RestAPI"],
@@ -17,7 +29,7 @@ const projects = [
     sourceCode: "https://github.com/Maheshkumarjena/ImageDetectionModel"
   },
   {
-    id: 2,
+    id: 3,
     title: "Inventory Management System",
     description: "Collaborative inventory management tool with complex features.",
     tags: ["JavaScript", "Next.js", "Prisma"],
@@ -26,7 +38,7 @@ const projects = [
     sourceCode: "https://github.com/Maheshkumarjena/JM"
   }
   ,{
-    id: 3,
+    id: 4,
     title: "Dot and Box multiplayer game",
     description: "A multiplayer game where players take turns drawing lines to complete boxes.",
     tags: ["Next js", "socket.io", "PostgreSQL"],
@@ -35,8 +47,9 @@ const projects = [
     sourceCode: "https://github.com/Maheshkumarjena/dot-box-ui"
   },
   
+
   {
-    id: 4,
+    id: 5,
     title: "Ride Sharing App",
     description: "A web application (EcoRide) for sharing rides to increase carpooling, where travelers can post their ride and other travelers can book the ride.",
     tags: ["Next.js", "MongoDB", "GraphHopper API"],
@@ -45,7 +58,7 @@ const projects = [
     sourceCode: "https://github.com/Maheshkumarjena/EcoRide"
   },
   {
-    id: 5,
+    id: 6,
     title: "Student Alumni Interaction Platform",
     description: "A platform for students and alumni to connect and interact.",
     tags: ["TypeScript", "Supabase", "WebSockets"],
@@ -54,15 +67,7 @@ const projects = [
     sourceCode: "https://github.com/Maheshkumarjena/AlumnNex"
   },
   
-  // {
-  //   id: 7,
-  //   title: "E-commerce Platform ",
-  //   description: "A minimalist e-commerce platform UI design with a focus on user experience and aesthetics.",
-  //   tags: ["UI/UX", "JavaScript", "Raw Html & Css"],
-  //   image: "/EcommerceStore.png",
-  //   live: "https://github.com/Maheshkumarjena/majorProject/deployments",
-  //   sourceCode: "https://github.com/Maheshkumarjena/majorProject"
-  // }
+  
 ];
 
 const ProjectCarousel = () => {
