@@ -46,7 +46,7 @@ const About: React.FC = () => {
             <motion.div
               className="relative rounded-2xl overflow-hidden border-2 border-cyan-400/30"
               custom={0}
-              variants={variants}
+              // variants={variants}
               whileHover={{ y: -10 }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 z-10" />
