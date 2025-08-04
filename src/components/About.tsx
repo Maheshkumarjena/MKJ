@@ -5,7 +5,7 @@ import Image from 'next/image';
 const About: React.FC = () => {
   const variants: Variants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
+    Nvisible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {

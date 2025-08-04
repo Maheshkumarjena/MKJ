@@ -13,29 +13,29 @@ const HeroSection = () => {
     });
   };
 
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({ // Changed any to number
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.2,
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    }),
-  };
+  // const textVariants = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: (i: number) => ({ // Changed any to number
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       delay: i * 0.2,
+  //       duration: 0.8,
+  //       ease: 'easeOut',
+  //     },
+  //   }),
+  // };
 
-  const floatingVariants = {
-    float: {
-      y: [0, -15, 0],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      },
-    },
-  };
+  // const floatingVariants = {
+  //   float: {
+  //     y: [0, -15, 0],
+  //     transition: {
+  //       duration: 3,
+  //       repeat: Infinity,
+  //       ease: 'easeInOut',
+  //     },
+  //   },
+  // };
 
   return (
     <section
