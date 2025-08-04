@@ -54,7 +54,7 @@ const HeroSection = () => {
             {/* ... (Text content as before) */}
             <motion.p
               className="text-lg sm:text-xl text-cyan-400 mb-4"
-              variants={textVariants}
+              // variants={textVariants}
               custom={0}
             >
               Hi, I&#39;m {/* Corrected single quote */}
@@ -62,7 +62,7 @@ const HeroSection = () => {
 
             <motion.h1
               className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-6"
-              variants={textVariants}
+              // variants={textVariants}
               custom={1}
             >
               Full Stack Developer
@@ -70,7 +70,7 @@ const HeroSection = () => {
 
             <motion.p
               className="text-lg sm:text-xl text-gray-300 mb-8"
-              variants={textVariants}
+              // variants={textVariants}
               custom={2}
             >
               I build exceptional digital experiences with modern web technologies.
@@ -79,7 +79,7 @@ const HeroSection = () => {
 
             <motion.div
               className="flex flex-wrap gap-4 mb-12"
-              variants={textVariants}
+              // variants={textVariants}
               custom={3}
             >
               <motion.a
@@ -103,7 +103,7 @@ const HeroSection = () => {
 
             <motion.div
               className="flex gap-4"
-              variants={textVariants}
+              // variants={textVariants}
               custom={4}
             >
               <motion.a
@@ -137,7 +137,7 @@ const HeroSection = () => {
           {/* Animated Illustration */}
           <motion.div
             className="lg:w-1/2 flex justify-center"
-            variants={floatingVariants}
+            // variants={floatingVariants}
             animate="float"
           >
             <div className="relative w-full max-w-md aspect-square">
